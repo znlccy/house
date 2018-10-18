@@ -1,6 +1,9 @@
 package com.znlccy.house.common.mapper;
 
+import com.znlccy.house.common.model.User;
 import org.apache.ibatis.annotations.Mapper;
+
+import java.util.List;
 
 /**
  * @Author: Administrator
@@ -12,4 +15,5 @@ import org.apache.ibatis.annotations.Mapper;
 @Mapper
 public interface UserMapper {
 
+    List<User> findAllUser();
 }

@@ -31,5 +31,17 @@ spring:
     timeBetweenEvictionRunMillis: 60000
   # 空闲连接的最小空闲时间
     minEvictableIdleTimeMillis: 300000
+
+  freemarker:
+    charset: UTF-8
+    content-type: text/html;charset=UTF-8
+    expose-request-attributes: true
+    expose-session-attributes: true
+    expose-spring-macro-helpers: true
+    suffix: .ftl
+    settings:
+      datetime_format: yyyy-MM-dd HH:mm:ss
+      default_encoding: UTF-8
+
 mybatis:
   config-location: classpath:/mybatis/mybatis-config.xml
