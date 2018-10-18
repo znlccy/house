@@ -1,6 +1,6 @@
 package com.znlccy.house.common.model;
 
-import javax.persistence.Entity;
+import javax.persistence.*;
 import java.io.Serializable;
 
 /**
@@ -11,18 +11,25 @@ import java.io.Serializable;
  */
 
 @Entity
+@Table(name = "tb_community")
 public class Community implements Serializable {
 
     /* 声明小区主键 */
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "cid", columnDefinition = "bigint(20) comment '小区主键'")
     private Long cid;
 
     /* 声明小区城市编码 */
+    @Column(name = "city_code", columnDefinition = "varchar(12) default '' comment '城市编码'", nullable = false)
     private String cityCode;
 
     /* 声明小区名称 */
+    @Column(name = "name", columnDefinition = "varchar(12) default '' comment '小区名称'", nullable = false)
     private String name;
 
     /* 声明小区城市名称 */
+    @Column(name = "city_name", columnDefinition = "varchar(12) default '' comment '城市名称'", nullable = false)
     private String cityName;
 
     /* 实现获取小区主键 */

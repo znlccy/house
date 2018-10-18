@@ -1,6 +1,6 @@
 package com.znlccy.house.common.model;
 
-import javax.persistence.Entity;
+import javax.persistence.*;
 import java.io.Serializable;
 import java.util.Date;
 
@@ -12,33 +12,45 @@ import java.util.Date;
  */
 
 @Entity
+@Table(name = "tb_user")
 public class User implements Serializable {
 
     /* 声明用户主键 */
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "uid", columnDefinition = "bigint(20) comment '用户主键'")
     private Long uid;
 
     /* 声明用户姓名 */
+    @Column(name = "name", columnDefinition = "varchar(40) default '' comment '用户姓名'", nullable = false)
     private String name;
 
     /* 声明用户手机 */
+    @Column(name = "phone", columnDefinition = "varchar(32) default '' comment '用户手机'",nullable = false, unique = true)
     private String phone;
 
     /* 声明用户电子邮件 */
+    @Column(name = "email", columnDefinition = "varchar(90) default '' comment '用户电子邮件'", unique = true, nullable = false)
     private String email;
 
     /* 声明用户自我介绍 */
+    @Column(name = "about_me", columnDefinition = "varchar(255) default '' comment '用户自我介绍'", nullable = false)
     private String aboutMe;
 
     /* 声明用户密码 */
+    @Column(name = "password", columnDefinition = "varchar(64) default '' comment '用户密码'", nullable = false)
     private String password;
 
     /* 声明用户头像 */
+    @Column(name = "avatar", columnDefinition = "varchar(255) default '' comment '用户头像'", nullable = false)
     private String avatar;
 
     /* 声明用户类型 1:普通用户 2:房屋经纪人 */
+    @Column(name = "type", columnDefinition = "tinyint(1) default 0 comment '用户类型 1:普通用户 2:房屋经纪人'", nullable = false)
     private Short type;
 
-    /* 声明用户是否启用 1:启用 2:不启用*/
+    /* 声明用户是否启用 1:启用 2:不启用 */
+    @Column(name = "enable", columnDefinition = "tinyint(1) default 0 comment '用户是否启用 1:启用 2:不启用'", nullable = false)
     private Short enable;
 
     /* 声明用户所属经济机构 */
