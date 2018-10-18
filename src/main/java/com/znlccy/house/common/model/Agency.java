@@ -1,5 +1,6 @@
 package com.znlccy.house.common.model;
 
+import javax.persistence.*;
 import java.io.Serializable;
 
 /**
@@ -9,30 +10,42 @@ import java.io.Serializable;
  * @Comment: 经纪机构实体类
  */
 
+@Entity
+@Table(name = "tb_agency")
 public class Agency implements Serializable {
 
     /* 声明经纪机构主键 */
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "aid", columnDefinition = "bigint(20) comment '机构主键'")
     private Long aid;
 
     /* 声明经纪机构名称 */
+    @Column(name = "name", columnDefinition = "varchar(40) default '' comment '机构名称'", nullable = false)
     private String name;
 
     /* 声明经纪机构地址 */
+    @Column(name = "address", columnDefinition = "varchar(255) default '' comment '机构地址'", nullable = false)
     private String address;
 
-    /* 声明经纪机构手机 */
+    /* 声明经纪机构电话 */
+    @Column(name = "phone", columnDefinition = "varchar(32) default '' comment '机构电话'", nullable = false, unique = true)
     private String phone;
 
     /* 声明经纪机构电子邮件 */
+    @Column(name = "email", columnDefinition = "varchar(90) default '' comment '机构电子邮件'", nullable = false, unique = true)
     private String email;
 
     /* 声明经纪机构描述 */
+    @Column(name = "about_us", columnDefinition = "varchar(255) default '' comment '关于我们'", nullable = true)
     private String aboutUs;
 
-    /* 声明经纪机构电话 */
+    /* 声明经纪机构手机 */
+    @Column(name = "mobile", columnDefinition = "varchar(32) default '' comment '机构手机'", nullable = false, unique = true)
     private String mobile;
 
     /* 声明经纪机构网址 */
+    @Column(name = "website", columnDefinition = "varchar(255) default '' comment '机构网址'", nullable = true)
     private String website;
 
     /* 实现获取经纪机构主键 */
