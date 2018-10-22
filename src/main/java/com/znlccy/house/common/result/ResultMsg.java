@@ -75,8 +75,9 @@ public class ResultMsg {
         Map<String, String> newMap = new HashMap();
         map.forEach((k,v) ->{
             if (v!=null) {
-                newMap.put(k, URLEncoder.encode());
+                /*newMap.put(k, URLEncoder.encode());*/
             }
         });
+        return "";
     }
 }
