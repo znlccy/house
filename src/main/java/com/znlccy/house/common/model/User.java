@@ -1,5 +1,7 @@
 package com.znlccy.house.common.model;
 
+import org.springframework.web.multipart.MultipartFile;
+
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.Date;
@@ -11,46 +13,46 @@ import java.util.Date;
  * @Comment: 用户实体类
  */
 
-@Entity
-@Table(name = "tb_user")
+/*@Entity
+@Table(name = "tb_user")*/
 public class User implements Serializable {
 
     /* 声明用户主键 */
-    @Id
+    /*@Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "uid", columnDefinition = "bigint(20) comment '用户主键'")
+    @Column(name = "uid", columnDefinition = "bigint(20) comment '用户主键'")*/
     private Long uid;
 
     /* 声明用户姓名 */
-    @Column(name = "name", columnDefinition = "varchar(40) default '' comment '用户姓名'", nullable = false)
+    /*@Column(name = "name", columnDefinition = "varchar(40) default '' comment '用户姓名'", nullable = false)*/
     private String name;
 
     /* 声明用户手机 */
-    @Column(name = "phone", columnDefinition = "varchar(32) default '' comment '用户手机'",nullable = false, unique = true)
+    /*@Column(name = "phone", columnDefinition = "varchar(32) default '' comment '用户手机'",nullable = false, unique = true)*/
     private String phone;
 
     /* 声明用户电子邮件 */
-    @Column(name = "email", columnDefinition = "varchar(90) default '' comment '用户电子邮件'", unique = true, nullable = false)
+    /*@Column(name = "email", columnDefinition = "varchar(90) default '' comment '用户电子邮件'", unique = true, nullable = false)*/
     private String email;
 
     /* 声明用户自我介绍 */
-    @Column(name = "about_me", columnDefinition = "varchar(255) default '' comment '用户自我介绍'", nullable = false)
+    /*@Column(name = "about_me", columnDefinition = "varchar(255) default '' comment '用户自我介绍'", nullable = false)*/
     private String aboutMe;
 
     /* 声明用户密码 */
-    @Column(name = "password", columnDefinition = "varchar(64) default '' comment '用户密码'", nullable = false)
+    /*@Column(name = "password", columnDefinition = "varchar(64) default '' comment '用户密码'", nullable = false)*/
     private String password;
 
     /* 声明用户头像 */
-    @Column(name = "avatar", columnDefinition = "varchar(255) default '' comment '用户头像'", nullable = false)
+    /*@Column(name = "avatar", columnDefinition = "varchar(255) default '' comment '用户头像'", nullable = false)*/
     private String avatar;
 
     /* 声明用户类型 1:普通用户 2:房屋经纪人 */
-    @Column(name = "type", columnDefinition = "tinyint(1) default 0 comment '用户类型 1:普通用户 2:房屋经纪人'", nullable = false)
+    /*@Column(name = "type", columnDefinition = "tinyint(1) default 0 comment '用户类型 1:普通用户 2:房屋经纪人'", nullable = false)*/
     private Short type;
 
     /* 声明用户是否启用 1:启用 2:不启用 */
-    @Column(name = "enable", columnDefinition = "tinyint(1) default 0 comment '用户是否启用 1:启用 2:不启用'", nullable = false)
+    /*@Column(name = "enable", columnDefinition = "tinyint(1) default 0 comment '用户是否启用 1:启用 2:不启用'", nullable = false)*/
     private Short enable;
 
     /* 声明用户所属经济机构 */
@@ -61,6 +63,15 @@ public class User implements Serializable {
 
     /* 声明用户更新时间 */
     private Date updateTime;
+
+    /* 声明确认密码 */
+    private String confirmPassword;
+
+    /* 声明新密码 */
+    private String newPassword;
+
+    /* 声明头像文件 */
+    private MultipartFile avatarFile;
 
     /* 实现获取用户主键 */
     public Long getUid() {
@@ -180,5 +191,29 @@ public class User implements Serializable {
     /* 实现设置用户更新时间 */
     public void setUpdateTime(Date updateTime) {
         this.updateTime = updateTime;
+    }
+
+    public String getConfirmPassword() {
+        return confirmPassword;
+    }
+
+    public void setConfirmPassword(String confirmPassword) {
+        this.confirmPassword = confirmPassword;
+    }
+
+    public String getNewPassword() {
+        return newPassword;
+    }
+
+    public void setNewPassword(String newPassword) {
+        this.newPassword = newPassword;
+    }
+
+    public MultipartFile getAvatarFile() {
+        return avatarFile;
+    }
+
+    public void setAvatarFile(MultipartFile avatarFile) {
+        this.avatarFile = avatarFile;
     }
 }
