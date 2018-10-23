@@ -4,4 +4,12 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.znlccy.house.common.mapper.BlogMapper">
 
+    <select id="findALLBlog" resultType="blog">
+        select * from tb_blog
+    </select>
+
+    <select id="findBlogById" resultType="blog">
+        select * from tb_blog where bid = #{bid}
+    </select>
+
 </mapper>
