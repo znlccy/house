@@ -15,5 +15,18 @@ import java.util.List;
 @Mapper
 public interface UserMapper {
 
+    /* 声明查询所有用户 */
     List<User> findAllUser();
+
+    /* 声明通过主键查找用户 */
+    User findUserById(Long uid);
+
+    /* 声明添加用户 */
+    void saveUser(User user);
+
+    /* 声明更新用户 */
+    void updateUser(User user);
+
+    /* 声明通过主键删除用户 */
+    void deleteUserById(Long uid);
 }

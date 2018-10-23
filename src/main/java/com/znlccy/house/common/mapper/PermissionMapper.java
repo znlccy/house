@@ -1,6 +1,9 @@
 package com.znlccy.house.common.mapper;
 
+import com.znlccy.house.common.model.Permission;
 import org.apache.ibatis.annotations.Mapper;
+
+import java.util.List;
 
 /**
  * @Author: Administrator
@@ -12,4 +15,18 @@ import org.apache.ibatis.annotations.Mapper;
 @Mapper
 public interface PermissionMapper {
 
+    /* 声明查找所有权限 */
+    List<Permission> findAllPermission();
+
+    /* 声明通过主键查询权限 */
+    Permission findPermissionById(Long pid);
+
+    /* 声明添加权限 */
+    void savePermission(Permission permission);
+
+    /* 声明更新权限 */
+    void updatePermission(Permission permission);
+
+    /* 声明通过主键删除权限 */
+    void deletePermissionById(Long pid);
 }

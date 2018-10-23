@@ -1,6 +1,9 @@
 package com.znlccy.house.common.mapper;
 
+import com.znlccy.house.common.model.Admin;
 import org.apache.ibatis.annotations.Mapper;
+
+import java.util.List;
 
 /**
  * @Author: Administrator
@@ -12,4 +15,18 @@ import org.apache.ibatis.annotations.Mapper;
 @Mapper
 public interface AdminMapper {
 
+    /* 声明查询所有管理员 */
+    List<Admin> findAllAdmin();
+
+    /* 声明通过主键查找管理员 */
+    Admin findAdminById(Long aid);
+
+    /* 声明添加管理员 */
+    void saveAdmin(Admin admin);
+
+    /* 声明更新管理员 */
+    void updateAdmin(Admin admin);
+
+    /* 声明通过主键删除管理员 */
+    void deleteAdminById(Long aid);
 }

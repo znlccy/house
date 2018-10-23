@@ -1,7 +1,9 @@
 package com.znlccy.house.index.serviceImpl;
 
+import com.znlccy.house.common.mapper.AgencyMapper;
 import com.znlccy.house.common.model.Agency;
 import com.znlccy.house.index.service.AgencyService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -14,6 +16,9 @@ import java.util.List;
  */
 @Service
 public class AgencyServiceImpl implements AgencyService {
+
+    @Autowired
+    private AgencyMapper agencyMapper;
 
     @Override
     public List<Agency> findAllAgency() {

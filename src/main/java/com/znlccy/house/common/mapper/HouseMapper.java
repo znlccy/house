@@ -15,5 +15,18 @@ import java.util.List;
 @Mapper
 public interface HouseMapper {
 
+    /* 声明查询所有房屋 */
     List<House> findAllHouse();
+
+    /* 声明通过主键查询房屋 */
+    House findHouseById(Long hid);
+
+    /* 声明添加房屋 */
+    void saveHouse(House house);
+
+    /* 声明更新房屋 */
+    void updateHouse(House house);
+
+    /* 声明通过主键删除房屋 */
+    void deleteHouseById(Long hid);
 }

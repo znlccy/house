@@ -1,6 +1,9 @@
 package com.znlccy.house.common.mapper;
 
+import com.znlccy.house.common.model.Community;
 import org.apache.ibatis.annotations.Mapper;
+
+import java.util.List;
 
 /**
  * @Author: Administrator
@@ -12,4 +15,13 @@ import org.apache.ibatis.annotations.Mapper;
 @Mapper
 public interface CommunityMapper {
 
+    List<Community> findAllCommunity();
+
+    Community findCommunityById(Long cid);
+
+    void saveCommunity(Community community);
+
+    void updateCommunity(Community community);
+
+    void deleteCommunityById(Long cid);
 }
