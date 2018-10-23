@@ -22,6 +22,26 @@ public class HouseServiceImpl implements HouseService {
 
     @Override
     public List<House> findAllHouse() {
-        return houseMapper.findAllHouse();
+        return null;
+    }
+
+    @Override
+    public House findHouseById(Long hid) {
+        return null;
+    }
+
+    @Override
+    public void saveHouse(House house) {
+
+    }
+
+    @Override
+    public void updateHouse(House house) {
+
+    }
+
+    @Override
+    public void deleteHouseById(Long hid) {
+
     }
 }
