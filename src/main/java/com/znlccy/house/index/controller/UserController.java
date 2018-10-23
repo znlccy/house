@@ -36,7 +36,11 @@ public class UserController {
         }
         //用户验证
         ResultMsg resultMsg = UserValidate.validate(account);
-        return "";
+        if (resultMsg.isSuccess() && userService.saveUser(account)) {
+            return "/index/user/account/registerSubmit";
+        } else {
+            return "/index/user/account/register?" + resultMsg.asUrlParams();
+        }
     }
 
 }

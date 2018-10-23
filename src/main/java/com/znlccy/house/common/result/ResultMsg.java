@@ -1,8 +1,10 @@
 package com.znlccy.house.common.result;
 
+import com.google.common.base.Joiner;
 import com.google.common.collect.Maps;
 import org.apache.commons.lang3.StringEscapeUtils;
 
+import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
 import java.util.HashMap;
 import java.util.Map;
@@ -75,9 +77,14 @@ public class ResultMsg {
         Map<String, String> newMap = new HashMap();
         map.forEach((k,v) ->{
             if (v!=null) {
-                /*newMap.put(k, URLEncoder.encode());*/
+                try {
+                    newMap.put(k, URLEncoder.encode(v,"utf-8"));
+                } catch (UnsupportedEncodingException e) {
+                    e.printStackTrace();
+                }
             }
         });
-        return "";
+
+        return Joiner.on("&").useForNull("").withKeyValueSeparator("=").join(newMap);
     }
 }

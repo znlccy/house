@@ -13,5 +13,18 @@ import java.util.List;
 
 public interface UserService {
 
+    /* 声明查找所有用户 */
     List<User> findAllUser();
+
+    /* 声明通过主键查询用户 */
+    User findUserById(Long uid);
+
+    /* 声明添加用户 */
+    boolean saveUser(User user);
+
+    /* 声明更新用户 */
+    boolean updateUser(User user);
+
+    /* 声明通过主键删除用户 */
+    boolean deleteUserById(Long uid);
 }

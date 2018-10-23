@@ -17,4 +17,32 @@ public class UserServiceImpl implements UserService {
     public List<User> findAllUser() {
         return null;
     }
+
+    @Override
+    public User findUserById(Long uid) {
+        return null;
+    }
+
+    /**
+     * 1.插入数据库，非激活;密码加盐md5,保存头像到本地
+     * 2.生成key，绑定email,发送到用户邮箱中
+     * 3.发送邮件给用户
+     * @param user
+     * @return
+     */
+    @Override
+    public boolean saveUser(User user) {
+        /*user.setPassword();*/
+        return false;
+    }
+
+    @Override
+    public boolean updateUser(User user) {
+        return false;
+    }
+
+    @Override
+    public boolean deleteUserById(Long uid) {
+        return false;
+    }
 }
