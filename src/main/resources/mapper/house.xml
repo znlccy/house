@@ -11,7 +11,7 @@
 
     <!-- 通过主键查找房屋 -->
     <select id="findHouseById" parameterType="java.lang.Long" resultType="house">
-
+      select * from tb_house where hid = #{hid}
     </select>
 
     <!-- 添加房屋 -->
@@ -26,7 +26,7 @@
 
     <!-- 通过主键删除房屋 -->
     <delete id="deleteHouseById" parameterType="java.lang.Long">
-
+      delete from tb_house where hid = #{hid}
     </delete>
 
 </mapper>
