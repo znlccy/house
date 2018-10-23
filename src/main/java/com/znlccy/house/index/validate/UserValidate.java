@@ -1,4 +1,4 @@
-package com.znlccy.house.common.validate;
+package com.znlccy.house.index.validate;
 
 import com.znlccy.house.common.model.User;
 import com.znlccy.house.common.result.ResultMsg;

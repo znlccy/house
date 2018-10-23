@@ -4,4 +4,29 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.znlccy.house.common.mapper.RoleMapper">
 
+    <!-- 查询所有角色 -->
+    <select id="findAllRole" resultType="role">
+
+    </select>
+
+    <!-- 通过主键查找角色 -->
+    <select id="findRoleById" parameterType="java.lang.Long" resultType="role">
+
+    </select>
+
+    <!-- 添加角色 -->
+    <insert id="saveRole" parameterType="role">
+
+    </insert>
+
+    <!-- 更新角色 -->
+    <update id="updateRole" parameterType="role">
+
+    </update>
+
+    <!-- 通过主键删除角色 -->
+    <delete id="deleteRoleById" parameterType="java.lang.Long">
+
+    </delete>
+
 </mapper>

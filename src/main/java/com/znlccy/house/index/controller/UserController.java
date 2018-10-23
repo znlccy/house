@@ -2,7 +2,7 @@ package com.znlccy.house.index.controller;
 
 import com.znlccy.house.common.model.User;
 import com.znlccy.house.common.result.ResultMsg;
-import com.znlccy.house.common.validate.UserValidate;
+import com.znlccy.house.index.validate.UserValidate;
 import com.znlccy.house.index.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;

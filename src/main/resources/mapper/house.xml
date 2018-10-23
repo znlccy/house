@@ -9,4 +9,24 @@
         select * from tb_house
     </select>
 
+    <!-- 通过主键查找房屋 -->
+    <select id="findHouseById" parameterType="java.lang.Long" resultType="house">
+
+    </select>
+
+    <!-- 添加房屋 -->
+    <insert id="saveHouse" parameterType="house">
+
+    </insert>
+
+    <!-- 更新房屋 -->
+    <update id="updateHouse" parameterType="house">
+
+    </update>
+
+    <!-- 通过主键删除房屋 -->
+    <delete id="deleteHouseById" parameterType="java.lang.Long">
+
+    </delete>
+
 </mapper>

@@ -4,4 +4,29 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.znlccy.house.common.mapper.AdminMapper">
 
+    <!-- 查询所有管理员 -->
+    <select id="findAllAdmin" resultType="admin">
+
+    </select>
+
+    <!-- 通过主键查找管理员 -->
+    <select id="findAdminById" parameterType="java.lang.Long" resultType="admin">
+
+    </select>
+
+    <!-- 添加管理员 -->
+    <insert id="saveAdmin" parameterType="admin">
+
+    </insert>
+
+    <!-- 更新管理员 -->
+    <update id="updateAdmin" parameterType="admin">
+
+    </update>
+
+    <!-- 通过主键删除管理员 -->
+    <delete id="deleteAdminById" parameterType="java.lang.Long">
+
+    </delete>
+
 </mapper>

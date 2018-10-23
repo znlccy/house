@@ -4,4 +4,29 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.znlccy.house.common.mapper.CommunityMapper">
 
+    <!-- 查询所有小区 -->
+    <select id="findAllCommunity" parameterType="community">
+
+    </select>
+
+    <!-- 通过主键查询小区 -->
+    <select id="findCommunityById" parameterType="java.lang.Long" resultType="community">
+
+    </select>
+
+    <!-- 添加小区 -->
+    <insert id="saveCommunity" parameterType="community">
+
+    </insert>
+
+    <!-- 更新小区 -->
+    <update id="updateCommunity" parameterType="community">
+
+    </update>
+
+    <!-- 通过主键删除小区 -->
+    <delete id="deleteCommunityById" parameterType="java.lang.Long">
+
+    </delete>
+
 </mapper>

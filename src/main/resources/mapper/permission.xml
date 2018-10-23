@@ -4,4 +4,29 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.znlccy.house.common.mapper.PermissionMapper">
 
+    <!-- 查询所有权限 -->
+    <select id="findAllPermission" resultType="permission">
+
+    </select>
+
+    <!-- 通过主键查询权限 -->
+    <select id="findPermissionById" parameterType="java.lang.Long" resultType="permission">
+
+    </select>
+
+    <!-- 添加权限 -->
+    <insert id="savePermission" parameterType="permission">
+
+    </insert>
+
+    <!-- 更新权限 -->
+    <update id="updatePermission" parameterType="permission">
+
+    </update>
+
+    <!-- 通过主键删除权限 -->
+    <delete id="deletePermissionById" parameterType="java.lang.Long">
+
+    </delete>
+
 </mapper>

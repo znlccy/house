@@ -4,4 +4,29 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.znlccy.house.common.mapper.UserMapper">
 
+    <!-- 查询所有用户 -->
+    <select id="findAllUser" resultType="user">
+
+    </select>
+
+    <!-- 通过主键查询用户 -->
+    <select id="findUserById" parameterType="java.lang.Long" resultType="user">
+
+    </select>
+
+    <!-- 添加用户 -->
+    <insert id="saveUser" parameterType="user">
+
+    </insert>
+
+    <!-- 更新用户 -->
+    <update id="updateUser" parameterType="user">
+
+    </update>
+
+    <!-- 通过主键删除用户 -->
+    <delete id="deleteUserById" parameterType="java.lang.Long">
+
+    </delete>
+
 </mapper>

@@ -4,4 +4,29 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.znlccy.house.common.mapper.CommentMapper">
 
+    <!-- 查询所有评论 -->
+    <select id="findAllComment" resultType="comment">
+
+    </select>
+
+    <!-- 通过主键查找评论 -->
+    <select id="findCommentById" parameterType="java.lang.Long" resultType="comment">
+
+    </select>
+
+    <!-- 添加评论 -->
+    <insert id="saveComment" parameterType="comment">
+
+    </insert>
+
+    <!-- 更新评论 -->
+    <update id="updateComment" parameterType="comment">
+
+    </update>
+
+    <!-- 通过主键删除评论 -->
+    <delete id="deleteCommentById" parameterType="java.lang.Long">
+
+    </delete>
+
 </mapper>

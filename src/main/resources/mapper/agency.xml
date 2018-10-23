@@ -4,4 +4,29 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.znlccy.house.common.mapper.AgencyMapper">
 
+    <!-- 查询所有房屋机构 -->
+    <select id="findAllAgency" resultType="agency">
+
+    </select>
+
+    <!-- 通过主键查找房屋机构 -->
+    <select id="findAgencyById" parameterType="java.lang.Long" resultType="agency">
+
+    </select>
+
+    <!-- 保存房屋机构 -->
+    <insert id="saveAgency" parameterType="agency">
+
+    </insert>
+
+    <!-- 更新房屋机构 -->
+    <update id="updateAgency" parameterType="agency">
+
+    </update>
+
+    <!-- 通过主键删除房屋机构 -->
+    <delete id="deleteAgencyById" parameterType="java.lang.Long">
+
+    </delete>
+
 </mapper>
