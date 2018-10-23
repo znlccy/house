@@ -19,11 +19,11 @@ public interface BlogService {
     Blog findBlogById(Long bid);
 
     /* 声明添加博客 */
-    void saveBlog(Blog blog);
+    boolean saveBlog(Blog blog);
 
     /* 声明更新博客 */
-    void updateBlog(Blog blog);
+    boolean updateBlog(Blog blog);
 
     /* 声明通过主键删除博客 */
-    void deleteBlogById(Long bid);
+    boolean deleteBlogById(Long bid);
 }

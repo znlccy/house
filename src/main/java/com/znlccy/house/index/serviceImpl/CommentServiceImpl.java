@@ -1,7 +1,9 @@
 package com.znlccy.house.index.serviceImpl;
 
 import com.znlccy.house.common.model.Blog;
+import com.znlccy.house.common.model.Comment;
 import com.znlccy.house.index.service.BlogService;
+import com.znlccy.house.index.service.CommentService;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -13,30 +15,30 @@ import java.util.List;
  * @introduce: 评论服务实现类
  */
 @Service
-public class CommentServiceImpl implements BlogService {
+public class CommentServiceImpl implements CommentService {
 
     @Override
-    public List<Blog> findAllBlog() {
+    public List<Comment> findAllComment() {
         return null;
     }
 
     @Override
-    public Blog findBlogById(Long bid) {
+    public Comment findCommentById(Long cid) {
         return null;
     }
 
     @Override
-    public void saveBlog(Blog blog) {
-
+    public boolean saveComment(Comment comment) {
+        return false;
     }
 
     @Override
-    public void updateBlog(Blog blog) {
-
+    public boolean updateComment(Comment comment) {
+        return false;
     }
 
     @Override
-    public void deleteBlogById(Long bid) {
-
+    public boolean deleteCommentById(Long cid) {
+        return false;
     }
 }

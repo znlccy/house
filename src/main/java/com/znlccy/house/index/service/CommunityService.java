@@ -19,11 +19,11 @@ public interface CommunityService {
     Community findCommunityById(Long cid);
 
     /* 声明保存小区 */
-    void saveCommunity(Community community);
+    boolean saveCommunity(Community community);
 
     /* 声明更新小区 */
-    void updateCommunity(Community community);
+    boolean updateCommunity(Community community);
 
     /* 声明通过主键删除小区 */
-    void deleteCommunityById(Long cid);
+    boolean deleteCommunityById(Long cid);
 }

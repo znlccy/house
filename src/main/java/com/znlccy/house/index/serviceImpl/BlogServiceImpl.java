@@ -26,17 +26,17 @@ public class BlogServiceImpl implements BlogService {
     }
 
     @Override
-    public void saveBlog(Blog blog) {
-
+    public boolean saveBlog(Blog blog) {
+        return false;
     }
 
     @Override
-    public void updateBlog(Blog blog) {
-
+    public boolean updateBlog(Blog blog) {
+        return false;
     }
 
     @Override
-    public void deleteBlogById(Long bid) {
-
+    public boolean deleteBlogById(Long bid) {
+        return false;
     }
 }

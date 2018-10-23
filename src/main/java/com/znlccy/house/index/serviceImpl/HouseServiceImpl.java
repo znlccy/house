@@ -31,17 +31,17 @@ public class HouseServiceImpl implements HouseService {
     }
 
     @Override
-    public void saveHouse(House house) {
-
+    public boolean saveHouse(House house) {
+        return false;
     }
 
     @Override
-    public void updateHouse(House house) {
-
+    public boolean updateHouse(House house) {
+        return false;
     }
 
     @Override
-    public void deleteHouseById(Long hid) {
-
+    public boolean deleteHouseById(Long hid) {
+        return false;
     }
 }

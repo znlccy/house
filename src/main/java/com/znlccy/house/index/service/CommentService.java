@@ -19,12 +19,12 @@ public interface CommentService {
     Comment findCommentById(Long cid);
 
     /* 声明保存评论 */
-    void saveComment(Comment comment);
+    boolean saveComment(Comment comment);
 
     /* 声明更新评论 */
-    void updateComment(Comment comment);
+    boolean updateComment(Comment comment);
 
     /* 声明通过主键删除评论 */
-    void deleteCommentById(Long cid);
+    boolean deleteCommentById(Long cid);
 
 }

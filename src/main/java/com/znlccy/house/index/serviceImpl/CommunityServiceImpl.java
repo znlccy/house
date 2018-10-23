@@ -26,17 +26,17 @@ public class CommunityServiceImpl implements CommunityService {
     }
 
     @Override
-    public void saveCommunity(Community community) {
-
+    public boolean saveCommunity(Community community) {
+        return false;
     }
 
     @Override
-    public void updateCommunity(Community community) {
-
+    public boolean updateCommunity(Community community) {
+        return false;
     }
 
     @Override
-    public void deleteCommunityById(Long cid) {
-
+    public boolean deleteCommunityById(Long cid) {
+        return false;
     }
 }

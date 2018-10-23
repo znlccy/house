@@ -31,17 +31,17 @@ public class AgencyServiceImpl implements AgencyService {
     }
 
     @Override
-    public void saveAgency(Agency agency) {
-
+    public boolean saveAgency(Agency agency) {
+        return false;
     }
 
     @Override
-    public void updateAgency(Agency agency) {
-
+    public boolean updateAgency(Agency agency) {
+        return false;
     }
 
     @Override
-    public void deleteAgencyById(Long aid) {
-
+    public boolean deleteAgencyById(Long aid) {
+        return false;
     }
 }
