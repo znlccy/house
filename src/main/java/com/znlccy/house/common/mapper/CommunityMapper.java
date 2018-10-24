@@ -19,9 +19,9 @@ public interface CommunityMapper {
 
     Community findCommunityById(Long cid);
 
-    void saveCommunity(Community community);
+    boolean saveCommunity(Community community);
 
-    void updateCommunity(Community community);
+    boolean updateCommunity(Community community);
 
-    void deleteCommunityById(Long cid);
+    boolean deleteCommunityById(Long cid);
 }

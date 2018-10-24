@@ -22,11 +22,11 @@ public interface HouseMapper {
     House findHouseById(Long hid);
 
     /* 声明添加房屋 */
-    void saveHouse(House house);
+    boolean saveHouse(House house);
 
     /* 声明更新房屋 */
-    void updateHouse(House house);
+    boolean updateHouse(House house);
 
     /* 声明通过主键删除房屋 */
-    void deleteHouseById(Long hid);
+    boolean deleteHouseById(Long hid);
 }

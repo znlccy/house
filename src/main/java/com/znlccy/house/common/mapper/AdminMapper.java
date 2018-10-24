@@ -22,11 +22,11 @@ public interface AdminMapper {
     Admin findAdminById(Long aid);
 
     /* 声明添加管理员 */
-    void saveAdmin(Admin admin);
+    boolean saveAdmin(Admin admin);
 
     /* 声明更新管理员 */
-    void updateAdmin(Admin admin);
+    boolean updateAdmin(Admin admin);
 
     /* 声明通过主键删除管理员 */
-    void deleteAdminById(Long aid);
+    boolean deleteAdminById(Long aid);
 }

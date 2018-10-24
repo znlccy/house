@@ -22,11 +22,11 @@ public interface RoleMapper {
     Role findRoleById(Long rid);
 
     /* 声明添加权限 */
-    void saveRole(Role role);
+    boolean saveRole(Role role);
 
     /* 声明更新权限 */
-    void updateRole(Role role);
+    boolean updateRole(Role role);
 
     /* 声明通过主键删除角色 */
-    void deleteRoleById(Long rid);
+    boolean deleteRoleById(Long rid);
 }

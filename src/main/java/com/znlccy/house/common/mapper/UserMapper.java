@@ -22,11 +22,11 @@ public interface UserMapper {
     User findUserById(Long uid);
 
     /* 声明添加用户 */
-    void saveUser(User user);
+    boolean saveUser(User user);
 
     /* 声明更新用户 */
-    void updateUser(User user);
+    boolean updateUser(User user);
 
     /* 声明通过主键删除用户 */
-    void deleteUserById(Long uid);
+    boolean deleteUserById(Long uid);
 }

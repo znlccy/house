@@ -22,11 +22,11 @@ public interface AgencyMapper {
     Agency findAgencyById(Long aid);
 
     /* 声明添加房屋机构 */
-    void saveAgency(Agency agency);
+    boolean saveAgency(Agency agency);
 
     /* 声明更新房屋机构 */
-    void updateAgency(Agency agency);
+    boolean updateAgency(Agency agency);
 
     /* 声明通过主键删除房屋机构 */
-    void deleteAgencyById(Long aid);
+    boolean deleteAgencyById(Long aid);
 }

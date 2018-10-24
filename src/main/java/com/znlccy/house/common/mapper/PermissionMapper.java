@@ -22,11 +22,11 @@ public interface PermissionMapper {
     Permission findPermissionById(Long pid);
 
     /* 声明添加权限 */
-    void savePermission(Permission permission);
+    boolean savePermission(Permission permission);
 
     /* 声明更新权限 */
-    void updatePermission(Permission permission);
+    boolean updatePermission(Permission permission);
 
     /* 声明通过主键删除权限 */
-    void deletePermissionById(Long pid);
+    boolean deletePermissionById(Long pid);
 }
