@@ -14,7 +14,7 @@ import java.util.List;
  * @Version: v1.0.0
  * @Comment: 博客服务实现类
  */
-@Service
+/*@Service*/
 public class BlogServiceImpl implements BlogService {
 
     @Autowired

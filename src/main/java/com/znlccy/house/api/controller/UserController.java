@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RestController;
  * @Comment: 用户控制器
  */
 
-@RestController
+/*@RestController*/
 public class UserController {
 
 }

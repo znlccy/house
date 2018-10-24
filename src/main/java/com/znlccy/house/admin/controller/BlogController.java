@@ -10,11 +10,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
  * @Version: v1.0.0
  * @Comment: 博客控制器
  */
-@Controller
-@RequestMapping(value = "/admin/blog")
+/*@Controller
+@RequestMapping(value = "/admin/blog")*/
 public class BlogController {
 
-    @GetMapping(value = "/all")
+    /*@GetMapping(value = "/all")*/
     public String findAllBlog() {
 
         return "admin/blog/all";
