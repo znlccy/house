@@ -15,7 +15,7 @@
     </select>
 
     <!-- 添加房屋 -->
-    <insert id="saveHouse" parameterType="house">
+    <insert id="saveHouse" parameterType="house" useGeneratedKeys="true">
 
     </insert>
 
