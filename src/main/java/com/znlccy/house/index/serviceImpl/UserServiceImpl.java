@@ -1,6 +1,7 @@
 package com.znlccy.house.index.serviceImpl;
 
 import com.znlccy.house.common.model.User;
+import com.znlccy.house.common.util.HashUtil;
 import com.znlccy.house.index.service.UserService;
 
 import java.util.List;
@@ -32,7 +33,7 @@ public class UserServiceImpl implements UserService {
      */
     @Override
     public boolean saveUser(User user) {
-        /*user.setPassword();*/
+        user.setPassword(HashUtil.encryPassword(user.getPassword()));
         return false;
     }
 

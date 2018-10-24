@@ -1,7 +1,10 @@
 package com.znlccy.house.common.util;
 
+import com.google.common.hash.HashCode;
 import com.google.common.hash.HashFunction;
 import com.google.common.hash.Hashing;
+
+import java.nio.charset.Charset;
 
 /**
  * @author: Adminstrator
@@ -11,5 +14,16 @@ import com.google.common.hash.Hashing;
  */
 public class HashUtil {
 
+    /* 加密函数 */
     private static final HashFunction FUNCTION = Hashing.md5();
+
+    /* 加密密盐 */
+    private static final String SALT = "znlccy@0603";
+
+    /* 加密函数 */
+    public static String encryPassword(String password) {
+        HashCode hashCode = FUNCTION.hashString(password+SALT, Charset.forName("UTF-8"));
+        return hashCode.toString();
+    }
+
 }

@@ -45,3 +45,6 @@ spring:
 
 mybatis:
   config-location: classpath:/mybatis/mybatis-config.xml
+
+file:
+  path: /home/znlccy/images
