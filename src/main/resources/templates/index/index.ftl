@@ -5,6 +5,6 @@
     <title>hello,{user.name}</title>
 </head>
 <body>
-
+    
 </body>
 </html>

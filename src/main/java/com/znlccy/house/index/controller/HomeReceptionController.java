@@ -1,6 +1,7 @@
 package com.znlccy.house.index.controller;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
 
 /**
  * @author: Adminstrator
@@ -11,5 +12,10 @@ import org.springframework.stereotype.Controller;
 
 @Controller
 public class HomeReceptionController {
+
+    @GetMapping(value = "")
+    public String index() {
+        return "";
+    }
 
 }
