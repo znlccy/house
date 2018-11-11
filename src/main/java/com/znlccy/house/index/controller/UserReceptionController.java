@@ -32,14 +32,14 @@ public class UserReceptionController {
     @RequestMapping(value = "accounts/register")
     public String accountRegister(User account, ModelMap modelMap) {
         if (account == null || account.getName() == null) {
-            return  "/index/user/account/register";
+            return  "/index/user/register";
         }
         //用户验证
         ResultMsg resultMsg = UserReceptionValidate.validate(account);
         if (resultMsg.isSuccess() && userService.saveUser(account)) {
-            return "/index/user/account/registerSubmit";
+            return "/index/user/registerSubmit";
         } else {
-            return "/index/user/account/register?" + resultMsg.asUrlParams();
+            return "/index/userregister?" + resultMsg.asUrlParams();
         }
     }
 

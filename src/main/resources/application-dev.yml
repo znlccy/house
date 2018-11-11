@@ -42,6 +42,7 @@ spring:
     settings:
       datetime_format: yyyy-MM-dd HH:mm:ss
       default_encoding: UTF-8
+      auto_import: common/common.ftl as common
 
 mybatis:
   config-location: classpath:/mybatis/mybatis-config.xml
