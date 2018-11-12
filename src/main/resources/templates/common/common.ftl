@@ -6,19 +6,16 @@
     <meta name="author" content="ThemeStarz">
 
     <link href='http://fonts.googleapis.com/css?family=Roboto:300,400,700' rel='stylesheet' type='text/css'>
-    <link href="/static/assets/fonts/font-awesome.css" rel="stylesheet" type="text/css">
-    <link rel="stylesheet" href="/static/assets/bootstrap/css/bootstrap.css" type="text/css">
-    <link rel="stylesheet" href="/static/assets/css/bootstrap-select.min.css" type="text/css">
-    <link rel="stylesheet" href="/static/assets/css/magnific-popup.css" type="text/css">
-    <link rel="stylesheet" href="/static/assets/css/jquery.slider.min.css" type="text/css">
-    <link rel="stylesheet" href="/static/assets/css/owl.carousel.css" type="text/css">
-    <link rel="stylesheet" href="/static/assets/css/style.css" type="text/css">
-    <link rel="stylesheet" href="/static/assets/css/owl.transitions.css" type="text/css">
-    <link rel="stylesheet" href="/static/assets/css/fileinput.min.css" type="text/css">
-
-    <link rel="stylesheet" href="/static/assets/css/toastr.css" type="text/css">
-
-
+    <link href="/css/font-awesome.css"type="text/css">
+    <link rel="stylesheet" href="/bootstrap/css/bootstrap.css" type="text/css">
+    <link rel="stylesheet" href="/css/bootstrap-select.min.css" type="text/css">
+    <link rel="stylesheet" href="/css/magnific-popup.css" type="text/css">
+    <link rel="stylesheet" href="/css/jquery.slider.min.css" type="text/css">
+    <link rel="stylesheet" href="/css/owl.carousel.css" type="text/css">
+    <link rel="stylesheet" href="/css/style.css" type="text/css">
+    <link rel="stylesheet" href="/css/owl.transitions.css" type="text/css">
+    <link rel="stylesheet" href="/css/fileinput.min.css" type="text/css">
+    <link rel="stylesheet" href="/css/toastr.css" type="text/css">
 
     <title>好房网</title>
 </head>
@@ -44,11 +41,11 @@
                                <h3>联系方式</h3>
                                <address>
                                    <strong>公司地址</strong><br>
-                                   北京西直门<br>
-                                   奋斗大厦B座3层
+                                   上海浦东新区<br>
+                                   明珠大厦A座4楼
                                </address>
-                               010-87111111<br>
-                               <a href="#">hello@example.com</a>
+                               021-87111188<br>
+                               <a href="#">znlccy@163.com</a>
                            </article>
                        </div><!-- /.col-sm-3 -->
                        <div class="col-md-3 col-sm-3">
@@ -67,8 +64,9 @@
            <aside id="footer-thumbnails" class="footer-thumbnails"></aside><!-- /#footer-thumbnails -->
            <aside id="footer-copyright">
                <div class="container">
-                   <span>Copyright © 2017. All Rights Reserved.</span>
-                   <span class="pull-right"><a href="#page-top" class="roll">Go to top</a></span>
+                   <#--<span>Copyright © 2018. All Rights Reserved.</span>-->
+                   <span>版权 © 2018. 玲叶技术有限公司所有.</span>
+                   <span class="pull-right"><a href="#page-top" class="roll">回到顶部</a></span>
                </div>
            </aside>
        </div><!-- /.inner -->
@@ -76,33 +74,32 @@
 </#macro>
 
 <#macro js>
-<script type="text/javascript" src="/static/assets/js/jquery-2.1.0.min.js"></script>
-<script type="text/javascript" src="/static/assets/js/jquery-migrate-1.2.1.min.js"></script>
-<script type="text/javascript" src="/static/assets/bootstrap/js/bootstrap.min.js"></script>
-<script type="text/javascript" src="/static/assets/js/smoothscroll.js"></script>
+<script type="text/javascript" src="/js/jquery-2.1.0.min.js"></script>
+<script type="text/javascript" src="/js/jquery-migrate-1.2.1.min.js"></script>
+<script type="text/javascript" src="/bootstrap/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="/js/smoothscroll.js"></script>
 <!-- <script type="text/javascript" src="/static/assets/js/markerwithlabel_packed.js"></script> -->
-
-<script type="text/javascript" src="/static/assets/js/owl.carousel.min.js"></script>
-<script type="text/javascript" src="/static/assets/js/bootstrap-select.min.js"></script>
-<script type="text/javascript" src="/static/assets/js/jquery.validate.min.js"></script>
-<script type="text/javascript" src="/static/assets/js/jquery.placeholder.js"></script>
-<script type="text/javascript" src="/static/assets/js/icheck.min.js"></script>
-<script type="text/javascript" src="/static/assets/js/jquery.vanillabox-0.1.5.min.js"></script>
-<script type="text/javascript" src="/static/assets/js/retina-1.1.0.min.js"></script>
-<script type="text/javascript" src="/static/assets/js/jquery.raty.min.js"></script>
-<script type="text/javascript" src="/static/assets/js/jquery.magnific-popup.min.js"></script>
-<script type="text/javascript" src="/static/assets/js/jshashtable-2.1_src.js"></script>
-<script type="text/javascript" src="/static/assets/js/jquery.numberformatter-1.2.3.js"></script>
-<script type="text/javascript" src="/static/assets/js/tmpl.js"></script>
-<script type="text/javascript" src="/static/assets/js/jquery.dependClass-0.1.js"></script>
-<script type="text/javascript" src="/static/assets/js/draggable-0.1.js"></script>
-<script type="text/javascript" src="/static/assets/js/jquery.slider.js"></script>
-<script type="text/javascript" src="/static/assets/js/jquery.fitvids.js"></script>
-<script type="text/javascript" src="/static/assets/js/fileinput.min.js"></script>
-<script type="text/javascript" src="/static/assets/js/custom-map.js"></script>
-<script type="text/javascript" src="/static/assets/js/custom.js"></script>
-<script type="text/javascript" src="/static/assets/js/toastr.js"></script>
-<script type="text/javascript" src="/static/common/common.js"></script>
+<script type="text/javascript" src="/js/owl.carousel.min.js"></script>
+<script type="text/javascript" src="/js/bootstrap-select.min.js"></script>
+<script type="text/javascript" src="/js/jquery.validate.min.js"></script>
+<script type="text/javascript" src="/js/jquery.placeholder.js"></script>
+<script type="text/javascript" src="/js/icheck.min.js"></script>
+<script type="text/javascript" src="/js/jquery.vanillabox-0.1.5.min.js"></script>
+<script type="text/javascript" src="/js/retina-1.1.0.min.js"></script>
+<script type="text/javascript" src="/js/jquery.raty.min.js"></script>
+<script type="text/javascript" src="/js/jquery.magnific-popup.min.js"></script>
+<script type="text/javascript" src="/js/jshashtable-2.1_src.js"></script>
+<script type="text/javascript" src="/js/jquery.numberformatter-1.2.3.js"></script>
+<script type="text/javascript" src="/js/tmpl.js"></script>
+<script type="text/javascript" src="/js/jquery.dependClass-0.1.js"></script>
+<script type="text/javascript" src="/js/draggable-0.1.js"></script>
+<script type="text/javascript" src="/js/jquery.slider.js"></script>
+<script type="text/javascript" src="/js/jquery.fitvids.js"></script>
+<script type="text/javascript" src="/js/fileinput.min.js"></script>
+<script type="text/javascript" src="/js/custom-map.js"></script>
+<script type="text/javascript" src="/js/custom.js"></script>
+<script type="text/javascript" src="/js/toastr.js"></script>
+<script type="text/javascript" src="/js/common.js"></script>
 
 
 </#macro>
@@ -168,14 +165,14 @@
                           </#if>
                         <a href="/accounts/logout" class="promoted">退出</a>
                     <#else>
-                        <a href="/accounts/register" class="promoted"><strong>Register</strong></a>
-                        <a href="/accounts/signin">Sign In</a>
+                        <a href="/accounts/register" class="promoted"><strong>注册</strong></a>
+                        <a href="/accounts/login">登录</a>
                     </#if>
                  </div>
                  <div class="language-bar">
-                     <a href="#" class="active"><img src="/static/assets/img/flags/gb.png" alt=""></a>
-                     <a href="#"><img src="/static/assets/img/flags/de.png" alt=""></a>
-                     <a href="#"><img src="/static/assets/img/flags/es.png" alt=""></a>
+                     <a href="#" class="active"><img src="/images/flags/gb.png" alt=""></a>
+                     <a href="#"><img src="/images/flags/de.png" alt=""></a>
+                     <a href="#"><img src="/images/flags/es.png" alt=""></a>
                  </div>
              </div>
          </div>
@@ -190,7 +187,7 @@
                      <span class="icon-bar"></span>
                  </button>
                  <div class="navbar-brand nav" id="brand">
-                     <a href="/"><img src="/static/assets/img/logo.png" alt="brand"></a>
+                     <a href="/"><img src="/images/logo.png" alt="brand"></a>
                  </div>
              </div>
              <nav class="collapse navbar-collapse bs-navbar-collapse navbar-right" role="navigation">
