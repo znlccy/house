@@ -6,7 +6,7 @@
 <body class="page-sub-page page-create-account page-account" id="page-top">
 
     <#-- Navigation Begin -->
-    <>
+
     <#-- Navigation End -->
 </body>
 </html>
