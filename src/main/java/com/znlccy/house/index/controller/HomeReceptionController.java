@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 @Controller
 public class HomeReceptionController {
 
-    @GetMapping(value = "")
+    @GetMapping(value = "/")
     public String index() {
         return "";
     }
