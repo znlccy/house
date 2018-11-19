@@ -94,4 +94,114 @@
         from tb_house a
         <include refid="houseCondition"></include>
     </select>
+
+    <select id="selectCommunity" resultType="community">
+        select * from tb_community
+        <where>
+            <if test="id != null and id != 0">
+              and id = #{id}
+            </if>
+            <if test="name != null and name != ''">
+              and name = #{name}
+            </if>
+        </where>
+    </select>
+
+    <select id="selectHouseUser" resultType="houseUser">
+      select id, house_id, user_id, create_time, type
+      from tb_house_user
+      where house_id = #{id} and user_id = #{user_id} and type = #{type}
+    </select>
+
+    <select id="selectSaleHouseUser" resultType="houseUser">
+      select id, house_id, user_id, create_time, type
+      from tb_house_user
+      where house_id = #{id} and type = 1
+      limit 1
+    </select>
+
+    <update id="updateHouse">
+        update tb_house
+        set rating = #{rating}
+        where id = #{id}
+    </update>
+
+    <update id="downHouse">
+        update tb_house
+        set state = 2
+        where id = #{id}
+    </update>
+
+    <insert id="insert" useGeneratedKeys="true" keyProperty="id">
+        insert into tb_house (
+          type,
+          name,
+          price,
+          images,
+          area,
+          beds,
+          baths,
+          rating,
+          remarks,
+          properties,
+          floor_plan,
+          tags,
+          create_time,
+          city_id,
+          community_id,
+          address,
+          state
+        )
+        value (
+          #{type},
+          #{name},
+          #{price},
+          #{images},
+          #{area},
+          #{beds},
+          #{baths},
+          #{rating},
+          #{remarks},
+          #{properties},
+          #{floorPlan},
+          #{tags},
+          #{createTime},
+          #{cityId},
+          #{communityId},
+          #{address},
+          #{state}
+        )
+    </insert>
+    
+    <insert id="insertHouseUser">
+        insert into tb_house_user (house_id, user_id, create_time, type)
+        value (
+          #{houseId},
+          #{userId},
+          #{createTime},
+          #{type}
+        )
+    </insert>
+    
+    <insert id="insertUserMsg">
+        insert into tb_house_msg (
+          msg,
+          create_time,
+          user_name,
+          house_id,
+          agent_id
+        )
+        value (
+          #{msg},
+          #{createTime}
+          #{userName},
+          #{houseId},
+          #{agentId}
+        )
+    </insert>
+    
+    <delete id="deleteHouseUser">
+        delete from tb_house_user
+        where house_id = #{id} and user_id = #{user_id} and type = #{type}
+    </delete>
 </mapper>
