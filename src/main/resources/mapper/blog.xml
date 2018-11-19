@@ -4,29 +4,41 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.znlccy.house.common.mapper.BlogMapper">
 
-    <!-- 查询所有博客 -->
-    <select id="findALLBlog" resultType="blog">
-        select * from tb_blog
+    <sql id="blogField">
+        id,
+        tags,
+        content,
+        create_time,
+        title
+    </sql>
+    
+    <select id="selectBlog" resultType="blog">
+        select <include refid="blogFiled" />
+        from tb_blog a
+        <where>
+          <if test="blog.id != null and blog.id != 0">
+            and id = #{blog.id}
+          </if>
+        </where>
+        order by a.create_time desc
+        <if test="pageParams.offset != null and pageParams.limit != null">
+          limit #{pageParams.offset}, #{pageParams.limit}
+        </if>
+        <if test="pageParams.offset == null and pageParams.limit != null">
+          limit #{pageParams.limit}
+        </if>
+
     </select>
 
-    <!-- 通过主键查询博客 -->
-    <select id="findBlogById" parameterType="java.lang.Long" resultType="blog">
-        select * from tb_blog where bid = #{bid}
+    <select id="selectBlogCount" resultType="long">
+        select count(id)
+        from tb_blog a
+        <where>
+          <if test="id != null and id != 0">
+              and id = #{id}
+          </if>
+        </where>
+        order by a.create_time desc
     </select>
-
-    <!-- 添加博客 -->
-    <insert id="saveBlog" parameterType="blog">
-
-    </insert>
-
-    <!-- 更新博客 -->
-    <update id="updateBlog" parameterType="blog">
-
-    </update>
-
-    <!-- 通过主键删除博客 -->
-    <delete id="deleteBlogById" parameterType="java.lang.Long">
-
-    </delete>
 
 </mapper>
