@@ -4,29 +4,94 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.znlccy.house.common.mapper.HouseMapper">
 
-    <!-- 查询所有房屋 -->
-    <select id="findAllHouse" resultType="house">
-        select * from tb_house
+    <!-- 查询房屋的字段 -->
+    <sql id="houseField">
+        a.id,
+        a.type,
+        a.name,
+        a.price,
+        a.images,
+        a.area,
+        a.beds,
+        a.baths,
+        a.rating,
+        a.remarks,
+        a.properties,
+        a.floor_plan,
+        a.tags,
+        a.create_time,
+        a.city_id,
+        a.community_id,
+        a.address,
+        a.state
+    </sql>
+
+    <sql id="houseCondition">
+      <if test="house.userId != null and house.userId != 0">
+          inner join (select house_id, user_id from tb_house_user
+          <where>
+              user_id = #{house.userId}
+              <if test="house.bookmarked != null and house.bookmarked == true">
+                  and type = 2
+              </if>
+              <if test="house.bookmarked != null and house.bookmarked == false">
+                  and type = 1
+              </if>
+          </where>
+          ) b
+          on a.id = b.house_id
+      </if>
+      <where>
+          <!-- 这里只显示上架的产品 -->
+          state = 1
+          <if test="house.id != null and house.id != 0">
+              and a.id = #{house.id}
+          </if>
+          <if test="house.type != null">
+              and a.type = #{house.type}
+          </if>
+          <if test="house.communityId != null">
+              and a.communityId = #{house.communityId}
+          </if>
+          <if test="house.name != null and house.name != '' ">
+              <bind name="pattern1" value="'%' + house.name + '%'" />
+              and a.name like #{pattern1}
+          </if>
+          <if test="house.ids != null and house.ids.size() > 0 ">
+              and a.id in 
+              <foreach collection="house.ids" item="item" index="index" open="(" close=")" separator=",">
+                  #{item}
+              </foreach>
+          </if>
+      </where>
+    </sql>
+    
+    <select id="selectPageHouses" resultType="house">
+        select <include refid="houseField" />
+        from tb_house a
+        <include refid="houseCondition"></include>
+        <choose>
+            <when test="house.sort != null and house.sort == 'price_asc'">
+                order by a.price asc
+            </when>
+            <when test="house.sort != null and house.sort == 'price.desc'">
+                order by a.price desc
+            </when>
+            <otherwise>
+                order by a.create_time desc
+            </otherwise>
+        </choose>
+        <if test="pageParams.offset != null and pageParams.limit != null">
+          limit #{pageParams.offset}, #{pageParams.limit}
+        </if>
+        <if test="pageParams.offset == null and pageParams.limit != null">
+          limit #{pageParams.limit}
+        </if>
     </select>
-
-    <!-- 通过主键查找房屋 -->
-    <select id="findHouseById" parameterType="java.lang.Long" resultType="house">
-      select * from tb_house where hid = #{hid}
+        
+    <select id="selectPageCount" resultType="long">
+        select count(id)
+        from tb_house a
+        <include refid="houseCondition"></include>
     </select>
-
-    <!-- 添加房屋 -->
-    <insert id="saveHouse" parameterType="house" useGeneratedKeys="true">
-
-    </insert>
-
-    <!-- 更新房屋 -->
-    <update id="updateHouse" parameterType="house">
-
-    </update>
-
-    <!-- 通过主键删除房屋 -->
-    <delete id="deleteHouseById" parameterType="java.lang.Long">
-      delete from tb_house where hid = #{hid}
-    </delete>
-
 </mapper>
