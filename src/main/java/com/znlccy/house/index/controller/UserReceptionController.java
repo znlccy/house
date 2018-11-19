@@ -43,4 +43,13 @@ public class UserReceptionController {
         }
     }
 
+    /**
+     *
+     * @return
+     */
+    @RequestMapping("/accounts/login")
+    public String accountLogin() {
+        return "/index/user/login";
+    }
+
 }
