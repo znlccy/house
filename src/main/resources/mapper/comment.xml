@@ -4,29 +4,48 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.znlccy.house.common.mapper.CommentMapper">
 
-    <!-- 查询所有评论 -->
-    <select id="findAllComment" resultType="comment">
+    <sql id="commentField">
+        id,
+        content,
+        house_id,
+        create_time,
+        blog_id,
+        type,
+        user_id
+    </sql>
 
+    <select id="selectComments" resultType="comment">
+        select <include refid="commentField" />
+        from tb_comment
+        where type = 1 and house_id = #{house_id}
+        order by create_time desc
+        limit #{size}
     </select>
 
-    <!-- 通过主键查找评论 -->
-    <select id="findCommentById" parameterType="java.lang.Long" resultType="comment">
-
+    <select id="selectBlogComments" resultType="comment">
+        select <include refid="commentField" />
+        from tb_comment
+        where type = 2 and blog_id = #{blog_id}
+        order by create_time desc
+        limit #{size}
     </select>
-
-    <!-- 添加评论 -->
-    <insert id="saveComment" parameterType="comment">
-
+    
+    <insert id="insert">
+        insert into tb_comment(
+          content,
+          house_id,
+          create_time,
+          blog_id,
+          type,
+          user_id
+        ) value (
+          #{content},
+          #{houseId},
+          #{createTime},
+          #{blogId},
+          #{type},
+          #{userId}
+        )
     </insert>
-
-    <!-- 更新评论 -->
-    <update id="updateComment" parameterType="comment">
-
-    </update>
-
-    <!-- 通过主键删除评论 -->
-    <delete id="deleteCommentById" parameterType="java.lang.Long">
-
-    </delete>
 
 </mapper>
