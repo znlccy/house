@@ -7,7 +7,7 @@
 
 <div class="wrapper">
 
-    <@common.nav/>
+    <@common.nav />
 
     <div id="page-content">
         <!-- Breadcrumb -->

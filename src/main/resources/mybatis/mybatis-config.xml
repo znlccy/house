@@ -24,6 +24,7 @@
         <typeAlias type="com.znlccy.house.common.model.Permission" alias="permission" />
         <typeAlias type="com.znlccy.house.common.model.Role" alias="role" />
         <typeAlias type="com.znlccy.house.common.model.User" alias="user" />
+        <typeAlias type="com.znlccy.house.common.model.UserMsg" />
     </typeAliases>
 
     <!-- 配置映射类 -->
@@ -38,4 +39,5 @@
         <mapper resource="mapper/role.xml" />
         <mapper resource="mapper/user.xml" />
     </mappers>
+
 </configuration>

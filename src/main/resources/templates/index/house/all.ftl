@@ -12,5 +12,4 @@
     </div>
 </body>
 
-<@common.js />
 </html>

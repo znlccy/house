@@ -5,28 +5,83 @@
 <mapper namespace="com.znlccy.house.common.mapper.UserMapper">
 
     <!-- 查询所有用户 -->
-    <select id="findAllUser" resultType="user">
-
+    <select id="selectUsers" resultType="User">
+        select name,phone,email from tb_user
     </select>
 
-    <!-- 通过主键查询用户 -->
-    <select id="findUserById" parameterType="java.lang.Long" resultType="user">
-
+    <!-- 筛选用户资料 -->
+    <select id="selectUserByQuery" resultType="user">
+        select * from tb_user
+        <where>
+            <if test="id != null || id != 0">
+                and id = #{id}
+            </if>
+            <if test="email != null">
+                and email = #{email}
+            </if>
+            <if test="password != null">
+                and password = #{password}
+            </if>
+            <if test="enable != null">
+                and enable = #{enable}
+            </if>
+            <if test="type != null and type != 0">
+                and type = #{type}
+            </if>
+        </where>
     </select>
 
-    <!-- 添加用户 -->
-    <insert id="saveUser" parameterType="user">
-
+    <!-- 添加用户资料 -->
+    <insert id="insert">
+        insert into tb_user (
+          name,
+          phone,
+          email,
+          aboutme,
+          password,
+          avatar,
+          type,
+          create_time,
+          enable
+        ) value (
+          #{name},
+          #{phone},
+          #{email},
+          #{aboutme},
+          #{password},
+          #{avatar},
+          #{type},
+          #{createTime},
+          #{enable}
+        )
     </insert>
 
-    <!-- 更新用户 -->
-    <update id="updateUser" parameterType="user">
-
-    </update>
-
-    <!-- 通过主键删除用户 -->
-    <delete id="deleteUserById" parameterType="java.lang.Long">
-
+    <!-- 根据邮箱删除 -->
+    <delete id="delete">
+        delete from tb_user
+        where email = #{email}
     </delete>
 
+    <!-- 更新用户资料 -->
+    <update id="update">
+      update tb_user
+      <set>
+          <if test="phone != null and phone != '' ">
+              phone = #{phone},
+          </if>
+          <if test="name != null and name != '' ">
+              name = #{name},
+          </if>
+          <if test="aboutme != null and aboutme != ''">
+              aboutme = #{aboutme},
+          </if>
+          <if test="password != null and password != ''">
+              password = #{password}
+          </if>
+          <if test="enable != #{enable}">
+              enable = #{enable}
+          </if>
+          where email = #{email}
+      </set>
+    </update>
 </mapper>

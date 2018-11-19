@@ -61,6 +61,14 @@
     </footer>
 </#macro>
 
+<#macro nav>
+
+</#macro>
+
+<#macro js>
+
+</#macro>
+
 <#macro paging pagination>
     <ul class="pagination">
         <#list pagition.pages as page>

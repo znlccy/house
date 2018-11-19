@@ -4,29 +4,76 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.znlccy.house.common.mapper.AgencyMapper">
 
-    <!-- 查询所有房屋机构 -->
-    <select id="findAllAgency" resultType="agency">
+    <!-- 查询的字段 -->
+    <sql id="agencyField">
+      id,
+      name,
+      address,
+      phone,
+      email,
+      about_us,
+      mobile,
+      web_site
+    </sql>
 
+
+    <select id="select" resultType="agency">
+      select <include refid="agencyField" />
+      from tb_agency
+      <where>
+        <if test="id != null || id != 0">
+          and id = #{id}
+        </if>
+        <if test="email != null || email != ''">
+          and email = #{email}
+        </if>
+      </where>
     </select>
 
-    <!-- 通过主键查找房屋机构 -->
-    <select id="findAgencyById" parameterType="java.lang.Long" resultType="agency">
-
-    </select>
-
-    <!-- 保存房屋机构 -->
-    <insert id="saveAgency" parameterType="agency">
-
+    <!-- 添加房屋机构 -->
+    <insert id="insert">
+        insert into tb_agency(
+          name,
+          address,
+          phone,
+          email,
+          about_us,
+          mobile,
+          web_site)
+          value (
+          #{name},
+          #{address},
+          #{phone},
+          #{email},
+          #{aboutUs},
+          #{mobile},
+          #{webSite}
+          )
     </insert>
 
-    <!-- 更新房屋机构 -->
-    <update id="updateAgency" parameterType="agency">
+    <!-- 查询的字段 -->
+    <sql id="agentField">
+        id,
+        name,
+        phone,
+        email,
+        aboutme,
+        password,
+        avatar,
+        type,
+        create_time,
+        enable,
+        agency_id
+    </sql>
 
-    </update>
-
-    <!-- 通过主键删除房屋机构 -->
-    <delete id="deleteAgencyById" parameterType="java.lang.Long">
-
-    </delete>
+    <select id="selectAgent" resultType="user">
+      select * from tb_user
+      <where>
+          enable = 1 and type = 2
+          <if test="user.id != null and user.id != 0">
+              and id = #{user.id}
+          </if>
+      </where>
+    </select>
 
 </mapper>
